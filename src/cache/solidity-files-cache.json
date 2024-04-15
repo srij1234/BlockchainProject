@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\srija\\Desktop\\hope\\my-react-app\\contracts\\Lock.sol": {
+    "C:\\Users\\srija\\Desktop\\hope\\my-react-app\\src\\contracts\\Lock.sol": {
       "lastModificationDate": 1713202182172,
       "contentHash": "dacf0d5cb5b45dc83086de5bc1c26c2c",
       "sourceName": "contracts/Lock.sol",
@@ -37,7 +37,7 @@
         "Lock"
       ]
     },
-    "C:\\Users\\srija\\Desktop\\hope\\my-react-app\\contracts\\Upload.sol": {
+    "C:\\Users\\srija\\Desktop\\hope\\my-react-app\\src\\contracts\\Upload.sol": {
       "lastModificationDate": 1713204477032,
       "contentHash": "4e912aab51841c7056750e862e83cd64",
       "sourceName": "contracts/Upload.sol",
