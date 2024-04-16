@@ -31,7 +31,7 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
-        let contractAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
+        let contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
 
         const contract = new ethers.Contract(
           contractAddress,
@@ -49,7 +49,7 @@ function App() {
   return (
     <Router> {/* Wrap your Routes in Router */}
       <div>
-        <Navbar />
+        <Navbar account = {account}/>
         <Routes>
           <Route path="/" element={<Home contract={contract}/>} /> {/* Use the "element" prop */}
           <Route path="/create" element={<Create contract={contract} account={account} />} />

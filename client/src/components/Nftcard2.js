@@ -29,16 +29,42 @@ function NftCard({ nft, contract, index }) {
   };
 
   return (
-    <div className="nft-card">
-      <img src={nft.url} alt={nft.name} />
-      <div className="nft-details">
-        <h3>{nft.name}</h3>
-        <p>Current Price: {(nft.value / 10**18).toString()} ETH</p>
-        <p>Selling Price: {(nft.price / 10**18).toString()} ETH</p>
-        <a href={nft.url} style={{ color: 'black', marginRight: '10px'}}>view</a>
-        <button onClick={handleBuy}>Buy</button>
+    <div className="nft-card" style={{
+      width: '300px',
+      height: '400px',
+      borderRadius: '10px',
+      padding: '20px',
+      margin: '20px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)'
+    }}>
+      <img src={nft.url} alt={nft.name} style={{ width: '70%', height: '200px' }} />
+      <div className="nft-details" style={{ marginTop: '20px', textAlign: 'center' }}>
+        <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>{nft.name}</h3>
+        <p style={{ marginBottom: '5px' }}>Current Price: {(nft.value / 10 ** 18).toString()} ETH</p>
+        <p style={{ marginBottom: '5px' }}>Selling Price: {(nft.price / 10 ** 18).toString()} ETH</p>
+        {/* //<p style={{ marginBottom: '5px' }}>Need to pay : {((2*nft.price -nft.value )/ 10 ** 18).toString()} ETH</p> */}
+        <a href={nft.url} style={{ color: 'black', textDecoration: 'none', marginRight: '10px' }}>View</a>
+        <button
+          onClick={handleBuy}
+          style={{
+            backgroundColor: '#8a2be2',
+            color: '#fff',
+            border: 'none',
+            padding: '8px 16px',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            marginTop: '10px'
+          }}
+        >
+          Buy
+        </button>
       </div>
     </div>
+    
+    
   );
 }
 
