@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 
 contract Upload {
@@ -44,7 +44,6 @@ contract Upload {
         uint _nftId,
         uint _price
     ) onlyOwner(_nftId) public {
-        
         nft storage temp = nfts[_nftId];
         require(_price>=temp.value, "price should increase ");
         temp.price = _price;
@@ -57,6 +56,7 @@ contract Upload {
     ) public payable {
         nft storage temp = nfts[_nftId];
         uint amount = 2*temp.price-temp.value;
+        require(temp.owner != msg.sender, "Owner cannot buy its own nft");
         require(temp.listed, "this nft is not listed");
         require(msg.value>=amount, "Driver is not verified");
 
@@ -65,6 +65,7 @@ contract Upload {
 
         address payable buyer=payable(msg.sender);
         buyer.transfer(msg.value-amount);
+        temp.owner = msg.sender;
         temp.value = temp.price; 
         temp.listed = false; 
     }

@@ -1,6 +1,7 @@
 // Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './navbar.css'; // Import the CSS file
 
 function Navbar() {
   return (
@@ -15,9 +16,9 @@ function Navbar() {
         <li>
           <Link to="/myNfts">My NFTs</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/marketplace">Marketplace</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
