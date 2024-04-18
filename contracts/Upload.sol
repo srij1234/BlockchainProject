@@ -18,7 +18,7 @@ contract Upload {
 
 
    modifier onlyOwner(uint256 _nftId) {
-       require(_nftId < nfts.length, "Invalid ride ID");
+       require(_nftId < nfts.length, "Invalid ID");
        require(msg.sender == nfts[_nftId].owner, "Only owner can call this function");
        _;
    }
