@@ -19,7 +19,7 @@ contract Upload {
 
    modifier onlyOwner(uint256 _nftId) {
        require(_nftId < nfts.length, "Invalid ride ID");
-       require(msg.sender == nfts[_nftId].owner, "Only ride owner can call this function");
+       require(msg.sender == nfts[_nftId].owner, "Only owner can call this function");
        _;
    }
 
@@ -58,7 +58,7 @@ contract Upload {
         uint amount = 2*temp.price-temp.value;
         require(temp.owner != msg.sender, "Owner cannot buy its own nft");
         require(temp.listed, "this nft is not listed");
-        require(msg.value>=amount, "Driver is not verified");
+        require(msg.value>=amount, "Insufficient amount");
 
         address payable seller=payable(temp.owner);
         seller.transfer(temp.price);
